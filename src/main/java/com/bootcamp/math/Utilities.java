@@ -1,15 +1,18 @@
 package com.bootcamp.math;
 
+import com.bootcamp.math.Utilities.Input.Command;
 import java.util.Objects;
 
 public class Utilities {
 
   static class Input {
 
-    String command;
+    Command command;
     int values;
 
-    public Input(String command, int values) {
+    enum Command {EXIT, CANCEL, ADD, NO_COMMAND}
+
+    public Input(Command command, int values) {
       this.command = command;
       this.values = values;
     }
@@ -20,8 +23,7 @@ public class Utilities {
         return false;
       }
       Input input = (Input) o;
-      return values == input.values &&
-          Objects.equals(command, input.command);
+      return values == input.values && command == input.command;
     }
 
     @Override
@@ -31,15 +33,17 @@ public class Utilities {
   }
 
   public static Input parseInput(String rawInput) {
-    if (rawInput.length() == 0) {
-      return new Input("", 0);
-    } else if (rawInput.equals("exit")) {
-      return new Input("exit", 0);
-    } else if (rawInput.equals("cancel")) {
-      return new Input("cancel", 0);
+    rawInput = rawInput.toUpperCase();
+    var inputArray = rawInput.split(" ");
+
+    if (inputArray[0].equals("")) {
+      return new Input(Command.NO_COMMAND, 0);
+    }
+    var command = Command.valueOf(inputArray[0]);
+    if (inputArray.length == 1) {
+      return new Input(command, 0);
     } else {
-      String values = rawInput.substring(4);
-      return new Input("add", Integer.parseInt(values));
+      return new Input(command, Integer.parseInt(inputArray[1]));
     }
   }
 }

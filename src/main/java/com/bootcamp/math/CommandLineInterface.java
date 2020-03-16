@@ -1,5 +1,6 @@
 package com.bootcamp.math;
 
+import com.bootcamp.math.Utilities.Input.Command;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.Scanner;
@@ -33,7 +34,7 @@ public class CommandLineInterface {
   private void processUserInput() {
     Utilities.Input userInput = Utilities.parseInput(rawInput);
 
-    if (userInput.command.equals("exit")) {
+    if (userInput.command == Command.EXIT) {
       isRunning = false;
     }
   }
