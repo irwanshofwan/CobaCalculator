@@ -41,3 +41,6 @@ to run
 ```
 ./gradlew run
 ```
+
+## Constrains
+- can parse empty string
