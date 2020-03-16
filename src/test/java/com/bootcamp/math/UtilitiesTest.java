@@ -52,4 +52,9 @@ public class UtilitiesTest {
   public void testParseGivenNothingReturnsInputWithEmptyStringAndZeroValue() {
     assertEquals(new Input("", 0), Utilities.parseInput(""));
   }
+
+  @Test
+  public void testParseGivenExitCommandReturnsInputWithExitStringAndZeroValue() {
+    assertEquals(new Input("exit", 0), Utilities.parseInput("exit"));
+  }
 }

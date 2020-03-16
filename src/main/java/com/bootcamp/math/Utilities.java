@@ -31,6 +31,9 @@ public class Utilities {
   }
 
   public static Input parseInput(String rawInput) {
+    if (rawInput.equals("exit")) {
+      return new Input("exit", 0);
+    }
     return new Input("", 0);
   }
 }
