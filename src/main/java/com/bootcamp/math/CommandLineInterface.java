@@ -41,17 +41,29 @@ public class CommandLineInterface {
 
     if (userInput.command == Command.EXIT) {
       isRunning = false;
-    } else if (userInput.command == Command.CANCEL) {
-      out.println("0");
-      out.flush();
-    } else if (userInput.command == Command.ADD) {
-      calculator.add(userInput.values);
-      out.println(calculator);
-      out.flush();
-    } else if (userInput.command == Command.SUBTRACT) {
-      calculator.subtract(userInput.values);
-      out.println(calculator);
-      out.flush();
+    } else {
+      doCalculatorOperations(userInput);
     }
+  }
+
+  private void doCalculatorOperations(Utilities.Input userInput) {
+    switch (userInput.command) {
+      case CANCEL:
+        calculator = new Calculator();
+        break;
+      case ADD:
+        calculator.add(userInput.values);
+        break;
+      case SUBTRACT:
+        calculator.subtract(userInput.values);
+        break;
+    }
+
+    printResult(calculator);
+  }
+
+  private void printResult(Object input) {
+    out.println(input);
+    out.flush();
   }
 }

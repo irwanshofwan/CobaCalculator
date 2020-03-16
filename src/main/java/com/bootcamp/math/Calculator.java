@@ -14,6 +14,9 @@ public class Calculator {
 
   @Override
   public String toString() {
+    if (result == 0) {
+      return "0";
+    }
     return String.valueOf(result);
   }
 }
