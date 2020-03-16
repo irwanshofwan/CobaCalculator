@@ -3,6 +3,7 @@ package com.bootcamp.math;
 import com.bootcamp.math.Utilities.Input.Command;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.io.PrintWriter;
 import java.util.Scanner;
 
 public class CommandLineInterface {
@@ -10,10 +11,12 @@ public class CommandLineInterface {
   private Scanner in;
   private String rawInput;
   private boolean isRunning;
+  private PrintWriter out;
 
   public CommandLineInterface(InputStream in, OutputStream out) {
     isRunning = true;
     this.in = new Scanner(in);
+    this.out = new PrintWriter(out);
   }
 
   public void run() {
@@ -36,6 +39,9 @@ public class CommandLineInterface {
 
     if (userInput.command == Command.EXIT) {
       isRunning = false;
+    } else if (userInput.command == Command.CANCEL) {
+      out.println("0");
+      out.flush();
     }
   }
 }

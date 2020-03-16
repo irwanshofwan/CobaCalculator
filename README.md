@@ -33,6 +33,7 @@ To run:
 
 ## Features
 - can only exit
+- can do cancel
 
 ## Constrains
 - can parse empty string
