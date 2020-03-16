@@ -36,6 +36,7 @@ To run:
 - can do cancel
 - can do add
 - can do subtract
+- can do multiply
 
 ## Constrains
 - can parse empty string

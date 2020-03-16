@@ -10,7 +10,7 @@ public class Utilities {
     Command command;
     int values;
 
-    enum Command {EXIT, CANCEL, ADD, SUBTRACT, NO_COMMAND}
+    enum Command {EXIT, CANCEL, ADD, SUBTRACT, MULTIPLY, NO_COMMAND}
 
     public Input(Command command, int values) {
       this.command = command;

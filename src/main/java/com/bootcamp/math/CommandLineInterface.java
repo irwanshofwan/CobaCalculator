@@ -57,6 +57,9 @@ public class CommandLineInterface {
       case SUBTRACT:
         calculator.subtract(userInput.values);
         break;
+      case MULTIPLY:
+        calculator.multiply(userInput.values);
+        break;
     }
 
     printResult(calculator);
