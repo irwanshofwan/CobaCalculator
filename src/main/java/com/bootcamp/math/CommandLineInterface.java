@@ -61,7 +61,13 @@ public class CommandLineInterface {
         calculator.multiply(userInput.values);
         break;
       case DIVIDE:
-        calculator.divide(userInput.values);
+        try {
+          calculator.divide(userInput.values);
+        } catch (ArithmeticException e) {
+          printResult("NaN");
+          calculator = new Calculator();
+          return;
+        }
         break;
     }
 

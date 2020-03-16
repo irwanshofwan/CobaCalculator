@@ -38,6 +38,7 @@ To run:
 - can do subtract
 - can do multiply
 - can do divide
+- can return NaN if divide by zero
 
 ## Constrains
 - can parse empty string

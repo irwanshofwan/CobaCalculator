@@ -64,4 +64,13 @@ public class CommandLineInterfaceTest {
     cli.run();
     assertEquals("6.0\n3.0\n", outputStream.toString());
   }
+
+  @Test
+  public void testRunDivideByZero() {
+    InputStream inputStream = new ByteArrayInputStream("divide 0\nexit\n".getBytes());
+    OutputStream outputStream = new ByteArrayOutputStream();
+    CommandLineInterface cli = new CommandLineInterface(inputStream, outputStream);
+    cli.run();
+    assertEquals("NaN\n", outputStream.toString());
+  }
 }
