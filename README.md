@@ -45,3 +45,4 @@ to run
 ## Constrains
 - can parse empty string
 - can parse exit command
+- can parse cancel command

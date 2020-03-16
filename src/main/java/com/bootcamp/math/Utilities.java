@@ -33,6 +33,8 @@ public class Utilities {
   public static Input parseInput(String rawInput) {
     if (rawInput.equals("exit")) {
       return new Input("exit", 0);
+    } else if (rawInput.equals("cancel")) {
+      return new Input("cancel", 0);
     }
     return new Input("", 0);
   }

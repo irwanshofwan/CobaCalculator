@@ -57,4 +57,9 @@ public class UtilitiesTest {
   public void testParseGivenExitCommandReturnsInputWithExitStringAndZeroValue() {
     assertEquals(new Input("exit", 0), Utilities.parseInput("exit"));
   }
+
+  @Test
+  public void testParseGivenCancelCommandReturnsInputWithExitStringAndZeroValue() {
+    assertEquals(new Input("cancel", 0), Utilities.parseInput("cancel"));
+  }
 }
