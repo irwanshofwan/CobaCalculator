@@ -31,11 +31,15 @@ public class Utilities {
   }
 
   public static Input parseInput(String rawInput) {
-    if (rawInput.equals("exit")) {
+    if (rawInput.length() == 0) {
+      return new Input("", 0);
+    } else if (rawInput.equals("exit")) {
       return new Input("exit", 0);
     } else if (rawInput.equals("cancel")) {
       return new Input("cancel", 0);
+    } else {
+      String values = rawInput.substring(4);
+      return new Input("add", Integer.parseInt(values));
     }
-    return new Input("", 0);
   }
 }

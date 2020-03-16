@@ -62,4 +62,9 @@ public class UtilitiesTest {
   public void testParseGivenCancelCommandReturnsInputWithExitStringAndZeroValue() {
     assertEquals(new Input("cancel", 0), Utilities.parseInput("cancel"));
   }
+
+  @Test
+  public void testParseGivenAddCommandWithAnyIntegerValuesReturnsInputWithAddStringAndIntegerValue() {
+    assertEquals(new Input("add", -5), Utilities.parseInput("add -5"));
+  }
 }
