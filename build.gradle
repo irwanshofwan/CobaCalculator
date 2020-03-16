@@ -2,6 +2,7 @@ plugins {
     id 'java'
     id 'jacoco'
     id 'com.github.ksoichiro.console.reporter' version '0.6.2'
+    id 'application'
 }
 jacoco {
     toolVersion = "0.8.2"
@@ -14,11 +15,18 @@ dependencies {
 }
 test {
     dependsOn 'cleanTest'
-    testLogging{
-        events("passed","skipped","failed")
+    testLogging {
+        events("passed", "skipped", "failed")
     }
 }
 jacocoTestReport {
+    afterEvaluate {
+        getClassDirectories().setFrom(files(classDirectories.files.collect {
+            fileTree(dir: it, exclude: [
+                    'com/bootcamp/math/Main.class'
+            ])
+        }))
+    }
     reports {
         xml.enabled true
         html.enabled true
@@ -28,4 +36,10 @@ jacocoTestReport {
 check {
     dependsOn 'jacocoTestReport'
     dependsOn 'jacocoTestCoverageVerification'
+}
+application {
+    mainClassName = 'com.bootcamp.math.Main'
+}
+run {
+    standardInput = System.in
 }

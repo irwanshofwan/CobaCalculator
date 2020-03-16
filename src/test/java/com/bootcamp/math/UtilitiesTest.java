@@ -1,7 +1,7 @@
 package com.bootcamp.math;
 
-import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
 
 import com.bootcamp.math.Utilities.Input;
 import java.util.Objects;

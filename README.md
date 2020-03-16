@@ -25,22 +25,14 @@ To run test, please run this command
 ```
 ​
 ## Run Instruction
-If you want this project to be able to run, please add to build.gradle
-```
-plugins {
-    id 'application'
-}
-
-application {
-    mainClassName = 'com.bootcamp.[PACKAGE].[MAINCLASS]'
-}
-
-```
-to run
+To run:
 
 ```
 ./gradlew run
 ```
+
+## Features
+- can only exit
 
 ## Constrains
 - can parse empty string
