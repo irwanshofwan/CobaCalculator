@@ -8,6 +8,10 @@ public class Calculator {
     result += number;
   }
 
+  public void subtract(int number) {
+    result -= number;
+  }
+
   @Override
   public String toString() {
     return String.valueOf(result);
