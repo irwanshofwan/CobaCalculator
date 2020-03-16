@@ -17,6 +17,9 @@ public class Calculator {
   }
 
   public void divide(int number) {
+    if (number == 0) {
+      throw new ArithmeticException();
+    }
     result /= number;
   }
 
