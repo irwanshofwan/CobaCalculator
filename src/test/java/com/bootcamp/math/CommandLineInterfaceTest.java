@@ -55,4 +55,13 @@ public class CommandLineInterfaceTest {
     cli.run();
     assertEquals("1.0\n2.0\n", outputStream.toString());
   }
+
+  @Test
+  public void testRunDivide() {
+    InputStream inputStream = new ByteArrayInputStream("add 6\ndivide 2\nexit\n".getBytes());
+    OutputStream outputStream = new ByteArrayOutputStream();
+    CommandLineInterface cli = new CommandLineInterface(inputStream, outputStream);
+    cli.run();
+    assertEquals("6.0\n3.0\n", outputStream.toString());
+  }
 }

@@ -60,6 +60,9 @@ public class CommandLineInterface {
       case MULTIPLY:
         calculator.multiply(userInput.values);
         break;
+      case DIVIDE:
+        calculator.divide(userInput.values);
+        break;
     }
 
     printResult(calculator);
