@@ -50,7 +50,11 @@ public class Utilities {
     if (inputArray.length == 1) {
       return new Input(command, 0);
     } else {
-      return new Input(command, Integer.parseInt(inputArray[1]));
+      try {
+        return new Input(command, Integer.parseInt(inputArray[1]));
+      } catch (NumberFormatException e) {
+        return new Input(Command.NO_COMMAND, 0);
+      }
     }
   }
 }

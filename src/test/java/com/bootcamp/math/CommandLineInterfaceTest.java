@@ -82,4 +82,13 @@ public class CommandLineInterfaceTest {
     cli.run();
     assertEquals("Invalid Command\n", outputStream.toString());
   }
+
+  @Test
+  public void testHandleRandomCommandParameter() {
+    InputStream inputStream = new ByteArrayInputStream("add chicken\nexit\n".getBytes());
+    OutputStream outputStream = new ByteArrayOutputStream();
+    CommandLineInterface cli = new CommandLineInterface(inputStream, outputStream);
+    cli.run();
+    assertEquals("Invalid Command\n", outputStream.toString());
+  }
 }
