@@ -12,11 +12,13 @@ public class CommandLineInterface {
   private String rawInput;
   private boolean isRunning;
   private PrintWriter out;
+  private Calculator calculator;
 
   public CommandLineInterface(InputStream in, OutputStream out) {
     isRunning = true;
     this.in = new Scanner(in);
     this.out = new PrintWriter(out);
+    calculator = new Calculator();
   }
 
   public void run() {
@@ -41,6 +43,10 @@ public class CommandLineInterface {
       isRunning = false;
     } else if (userInput.command == Command.CANCEL) {
       out.println("0");
+      out.flush();
+    } else if (userInput.command == Command.ADD) {
+      calculator.add(userInput.values);
+      out.println(calculator);
       out.flush();
     }
   }

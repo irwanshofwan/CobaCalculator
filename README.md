@@ -34,6 +34,7 @@ To run:
 ## Features
 - can only exit
 - can do cancel
+- can do add
 
 ## Constrains
 - can parse empty string
