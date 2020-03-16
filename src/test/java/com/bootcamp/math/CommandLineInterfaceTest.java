@@ -73,4 +73,13 @@ public class CommandLineInterfaceTest {
     cli.run();
     assertEquals("NaN\n", outputStream.toString());
   }
+
+  @Test
+  public void testHandleRandomCommand() {
+    InputStream inputStream = new ByteArrayInputStream("something very random\nexit\n".getBytes());
+    OutputStream outputStream = new ByteArrayOutputStream();
+    CommandLineInterface cli = new CommandLineInterface(inputStream, outputStream);
+    cli.run();
+    assertEquals("Invalid Command\n", outputStream.toString());
+  }
 }

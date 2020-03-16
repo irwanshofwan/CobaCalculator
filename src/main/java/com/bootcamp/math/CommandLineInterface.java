@@ -69,6 +69,9 @@ public class CommandLineInterface {
           return;
         }
         break;
+      case NO_COMMAND:
+        printResult("Invalid Command");
+        return;
     }
 
     printResult(calculator);

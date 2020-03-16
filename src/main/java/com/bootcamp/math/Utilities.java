@@ -39,7 +39,14 @@ public class Utilities {
     if (inputArray[0].equals("")) {
       return new Input(Command.NO_COMMAND, 0);
     }
-    var command = Command.valueOf(inputArray[0]);
+
+    Command command;
+    try {
+      command = Command.valueOf(inputArray[0]);
+    } catch (IllegalArgumentException e) {
+      return new Input(Command.NO_COMMAND, 0);
+    }
+
     if (inputArray.length == 1) {
       return new Input(command, 0);
     } else {
