@@ -37,4 +37,13 @@ public class CommandLineInterfaceTest {
     cli.run();
     assertEquals("1.0\n", outputStream.toString());
   }
+
+  @Test
+  public void testRunSubtract() {
+    InputStream inputStream = new ByteArrayInputStream("subtract 1\nexit\n".getBytes());
+    OutputStream outputStream = new ByteArrayOutputStream();
+    CommandLineInterface cli = new CommandLineInterface(inputStream, outputStream);
+    cli.run();
+    assertEquals("-1.0\n", outputStream.toString());
+  }
 }

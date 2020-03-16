@@ -48,6 +48,10 @@ public class CommandLineInterface {
       calculator.add(userInput.values);
       out.println(calculator);
       out.flush();
+    } else if (userInput.command == Command.SUBTRACT) {
+      calculator.subtract(userInput.values);
+      out.println(calculator);
+      out.flush();
     }
   }
 }
