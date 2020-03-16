@@ -26,4 +26,12 @@ public class CalculatorTest {
     calculator.multiply(2);
     Assert.assertEquals("2.0", calculator.toString());
   }
+
+  @Test
+  public void testDivide() {
+    Calculator calculator = new Calculator();
+    calculator.add(6);
+    calculator.divide(2);
+    Assert.assertEquals("3.0", calculator.toString());
+  }
 }
