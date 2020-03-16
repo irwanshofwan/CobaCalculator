@@ -12,6 +12,10 @@ public class Calculator {
     result -= number;
   }
 
+  public void multiply(int number) {
+    result *= number;
+  }
+
   @Override
   public String toString() {
     if (result == 0) {

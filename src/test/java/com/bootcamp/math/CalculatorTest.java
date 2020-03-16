@@ -18,4 +18,12 @@ public class CalculatorTest {
     calculator.subtract(1);
     Assert.assertEquals("-1.0", calculator.toString());
   }
+
+  @Test
+  public void testMultiply() {
+    Calculator calculator = new Calculator();
+    calculator.add(1);
+    calculator.multiply(2);
+    Assert.assertEquals("2.0", calculator.toString());
+  }
 }
