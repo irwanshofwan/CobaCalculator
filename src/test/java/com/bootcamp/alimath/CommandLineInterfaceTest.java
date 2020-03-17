@@ -1,4 +1,4 @@
-package com.bootcamp.math;
+package com.bootcamp.alimath;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -26,7 +26,7 @@ public class CommandLineInterfaceTest {
     OutputStream outputStream = new ByteArrayOutputStream();
     CommandLineInterface cli = new CommandLineInterface(inputStream, outputStream);
     cli.run();
-    assertEquals("0\n", outputStream.toString());
+    assertEquals("0.0\n", outputStream.toString());
   }
 
   @Test

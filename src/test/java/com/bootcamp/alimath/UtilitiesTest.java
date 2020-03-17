@@ -1,10 +1,10 @@
-package com.bootcamp.math;
+package com.bootcamp.alimath;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 
-import com.bootcamp.math.Utilities.Input;
-import com.bootcamp.math.Utilities.Input.Command;
+import com.bootcamp.alimath.Utilities.Input;
+import com.bootcamp.alimath.Utilities.Input.Command;
 import java.util.Objects;
 import org.junit.Test;
 

@@ -1,6 +1,6 @@
-package com.bootcamp.math;
+package com.bootcamp.alimath;
 
-import com.bootcamp.math.Utilities.Input.Command;
+import com.bootcamp.alimath.Utilities.Input.Command;
 import java.util.Objects;
 
 public class Utilities {

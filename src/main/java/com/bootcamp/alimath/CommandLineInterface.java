@@ -1,6 +1,6 @@
-package com.bootcamp.math;
+package com.bootcamp.alimath;
 
-import com.bootcamp.math.Utilities.Input.Command;
+import com.bootcamp.alimath.Utilities.Input.Command;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.PrintWriter;
@@ -47,38 +47,14 @@ public class CommandLineInterface {
   }
 
   private void doCalculatorOperations(Utilities.Input userInput) {
-    switch (userInput.command) {
-      case CANCEL:
-        calculator = new Calculator();
-        break;
-      case ADD:
-        calculator.add(userInput.values);
-        break;
-      case SUBTRACT:
-        calculator.subtract(userInput.values);
-        break;
-      case MULTIPLY:
-        calculator.multiply(userInput.values);
-        break;
-      case DIVIDE:
-        try {
-          calculator.divide(userInput.values);
-        } catch (ArithmeticException e) {
-          printResult("NaN");
-          calculator = new Calculator();
-          return;
-        }
-        break;
-      case NO_COMMAND:
-        printResult("Invalid Command");
-        return;
+    Command command = userInput.command;
+    int value = userInput.values;
+    if (calculator.isBinaryOperation(command) || calculator.isUnaryOperation(command)) {
+      double result = calculator.execute(command, value);
+      out.println(result);
+    } else {
+      out.println("Invalid Command");
     }
-
-    printResult(calculator);
-  }
-
-  private void printResult(Object input) {
-    out.println(input);
     out.flush();
   }
 }

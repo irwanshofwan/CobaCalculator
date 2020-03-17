@@ -1,4 +1,4 @@
-package com.bootcamp.math;
+package com.bootcamp.alimath;
 
 public class Main {
 

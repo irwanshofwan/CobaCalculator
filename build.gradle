@@ -23,7 +23,7 @@ jacocoTestReport {
     afterEvaluate {
         getClassDirectories().setFrom(files(classDirectories.files.collect {
             fileTree(dir: it, exclude: [
-                    'com/bootcamp/math/Main.class'
+                    'com/bootcamp/alimath/Main.class'
             ])
         }))
     }
@@ -38,7 +38,7 @@ check {
     dependsOn 'jacocoTestCoverageVerification'
 }
 application {
-    mainClassName = 'com.bootcamp.math.Main'
+    mainClassName = 'com.bootcamp.alimath.Main'
 }
 run {
     standardInput = System.in
